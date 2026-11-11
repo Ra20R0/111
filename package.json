@@ -1,0 +1,60 @@
+{
+  "name": "fish",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "create-admin": "tsx scripts/create-admin.ts",
+    "db:copy-to-prod": "tsx scripts/copy-to-prod.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.12",
+    "@supabase/supabase-js": "^2.118.0",
+    "browser-image-compression": "^2.0.2",
+    "drizzle-orm": "^0.45.4",
+    "exceljs": "^4.4.0",
+    "html-to-image": "^1.11.13",
+    "jose": "^6.2.13",
+    "next": "15.5.28",
+    "postgres": "^3.4.9",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.28",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.5"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.32"
+    },
+    "exceljs": {
+      "uuid": "^11.1.1"
+    },
+    "@esbuild-kit/core-utils": {
+      "esbuild": "^0.25.12"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

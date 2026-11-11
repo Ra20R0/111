@@ -1,0 +1,12 @@
+# Netlify сам подключает адаптер Next.js (@netlify/plugin-nextjs) — отдельно ставить не нужно.
+# Секреты (DATABASE_URL, SESSION_SECRET, ключи Supabase) задаются в интерфейсе Netlify, не здесь.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+  # Адрес сайта по замыслу вшивается в страницы, а «media» встречается в коде — это не секреты.
+  # Настоящие секреты (ключ Supabase, пароль базы, SESSION_SECRET) сканер по-прежнему проверяет.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SITE_URL,SUPABASE_BUCKET"
