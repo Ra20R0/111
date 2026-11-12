@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f5f1;
+  --surface: #ffffff;
+  --ink: #17242b;
+  --muted: #5b6b73;
+  --line: #e6e1d8;
+  --brand: #0e6d5c;
+  --brand-dark: #0a5346;
+  --accent: #e2572b;
+  --accent-dark: #c9471f;
+  --gold: #f2a71b;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-manrope), system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  border: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 18px;
+}
+.btn-primary:hover {
+  background: var(--brand-dark);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+}
+.btn-accent:hover {
+  background: var(--accent-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  padding: 10px 18px;
+}
+.btn-outline:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 10px 30px rgb(23 36 43 / 0.1);
+  transform: translateY(-2px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.badge-discount {
+  background: var(--accent);
+  color: #fff;
+}
+
+.badge-new {
+  background: var(--gold);
+  color: #3d2a00;
+}
+
+input,
+textarea,
+select {
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--surface);
+  font: inherit;
+  width: 100%;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgb(14 109 92 / 0.15);
+}
